@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+
+<style>
+    /* Basic page setup */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Simple navbar */
+    .navbar {
+        background-color: #7a1f4b;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar h2 {
+        color: white;
+        margin: 0;
+    }
+
+    /* Login box in the center */
+    .login-box {
+        background-color: white;
+        width: 300px;
+        margin: 60px auto;
+        padding: 25px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login-box h2 {
+        text-align: center;
+        color: #7a1f4b;
+    }
+
+    /* Form styling */
+    label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Error text */
+    .error {
+        color: red;
+        font-size: 13px;
+        display: none;
+    }
+
+    /* Login button */
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #7a1f4b;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #5c1739;
+    }
+
+    /* Register link */
+    .register-text {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    /* Success message */
+    .success {
+        color: green;
+        text-align: center;
+        display: none;
+        margin-top: 15px;
+    }
+
+    /* Make it responsive on small screens */
+    @media (max-width: 400px) {
+        .login-box {
+            width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>BlogSpace</h2>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <p class="success" id="successMsg">Login successful!</p>
+
+        <form id="loginForm">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <p class="error" id="emailError">Please enter a valid email</p>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <p class="error" id="passwordError">Password must be at least 6 characters</p>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p class="register-text">
+            Don't have an account? <a href="register.html">Register here</a>
+        </p>
+    </div>
+
+<script>
+    // Get form and input elements
+    var form = document.getElementById("loginForm");
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    var emailError = document.getElementById("emailError");
+    var passwordError = document.getElementById("passwordError");
+    var successMsg = document.getElementById("successMsg");
+
+    // Run this when the form is submitted
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop the form from refreshing the page
+
+        var isValid = true;
+
+        // Check email is not empty and contains @ and .
+        if (email.value.includes("@") && email.value.includes(".")) {
+            emailError.style.display = "none";
+        } else {
+            emailError.style.display = "block";
+            isValid = false;
+        }
+
+        // Check password length
+        if (password.value.length >= 6) {
+            passwordError.style.display = "none";
+        } else {
+            passwordError.style.display = "block";
+            isValid = false;
+        }
+
+        // If everything is correct, show success message
+        if (isValid) {
+            successMsg.style.display = "block";
+
+            // Go to dashboard page after 1 second
+            setTimeout(function () {
+                window.location.href = "dashboard.html";
+            }, 1000);
+        }
+    });
+</script>
+
+</body>
+</html>

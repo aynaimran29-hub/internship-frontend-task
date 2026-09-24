@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - BlogSpace</title>
+
+<style>
+    /* Basic page setup */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #7a1f4b;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar h2 {
+        color: white;
+        margin: 0;
+    }
+
+    .navbar .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 15px;
+    }
+
+    .navbar .nav-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hero section */
+    .hero {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: white;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .hero h1 {
+        color: #7a1f4b;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        color: #555;
+        font-size: 15px;
+    }
+
+    /* Blog list section */
+    .blog-list {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    /* Single blog card */
+    .blog-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .blog-card h3 {
+        color: #7a1f4b;
+        margin-top: 0;
+    }
+
+    .blog-card p {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .blog-card .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        color: #7a1f4b;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .blog-card .read-more:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #7a1f4b;
+        color: white;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    /* Responsive for small screens */
+    @media (max-width: 500px) {
+        .navbar {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .navbar .nav-links a {
+            margin: 5px 10px;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>BlogSpace</h2>
+        <div class="nav-links">
+
+           <a href="./Dashboard.html">Dashboard</a>
+            <a href="./Register.html">Register</a>
+            <a href="./Login .html">login</a>
+            <a href="./create blog.html">blog</a>
+            
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to BlogSpace</h1>
+        <p>Read blogs, share your thoughts, and connect with other writers.</p>
+    </div>
+
+    <!-- Blog Posts List -->
+    <div class="blog-list">
+
+        <div class="blog-card">
+            <h3>Getting Started with HTML</h3>
+            <p>HTML is the first step in learning web development. It gives structure to every website you visit, from simple pages to full applications.</p>
+        </div>
+
+        <div class="blog-card">
+            <h3>Why CSS Matters</h3>
+            <p>CSS is what makes a website look good. It controls colors, spacing, layout, and how a page adjusts on different screen sizes.</p>
+        </div>
+
+        <div class="blog-card">
+            <h3>JavaScript Basics for Beginners</h3>
+            <p>JavaScript brings a website to life. It lets you validate forms, respond to clicks, and update content without reloading the page.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 BlogSpace. All rights reserved.
+    </footer>
+
+</body>
+</html>
