@@ -27,7 +27,7 @@
     }
 
     /* Register box in the center */
-    .register-box {
+    .Register-box {
         background-color: white;
         width: 320px;
         margin: 50px auto;
@@ -36,7 +36,7 @@
         border-radius: 5px;
     }
 
-    .register-box h2 {
+    .Register-box h2 {
         text-align: center;
         color: #7a1f4b;
     }
@@ -95,7 +95,7 @@
 
     /* Make it responsive on small screens */
     @media (max-width: 400px) {
-        .register-box {
+        .Register-box {
             width: 90%;
         }
     }
@@ -109,46 +109,45 @@
     </div>
 
     <!-- Register Form -->
-    <div class="register-box">
+    <div class="Register-box">
         <h2>Register</h2>
 
         <p class="success" id="successMsg">Account created successfully!</p>
 
 
-        <form id="registerForm">
+        <form id="RegisterForm">
 
-            <label for="name">Full Name</label>
+            <label for="name"> name</label>
             <input type="text" id="name" placeholder="Enter your name">
             <p class="error" id="nameError">Please enter your name</p>
 
-            <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Enter your email">
+            <label for="email">email</label>
+            <input type="email" id="email" placeholder="Enter your email">
             <p class="error" id="emailError">Please enter a valid email</p>
 
-            <label for="password">Password</label>
+            <label for="password">password</label>
             <input type="password" id="password" placeholder="Create a password">
             <p class="error" id="passwordError">Password must be at least 6 characters</p>
 
-            <label for="confirmPassword">Confirm Password</label>
+            <label for="confirmPassword">ConfirmPassword</label>
             <input type="password" id="confirmPassword" placeholder="Re-enter your password">
             <p class="error" id="confirmError">Passwords do not match</p>
 
-            <button type="submit">SUBMIT</button>
+            <button type="Register">Register</button>
         
 
         </form>
 
         <p class="login-text">
-            Already have an account? <a href="./Login .html">Login here</a>
+            Already have an account? <a href="Login .html">Login here</a>
         </p>
     
-        </p>
     </div>
 
 <script>
     // Get form and input elements
-    var form = document.getElementById("registerForm");
-    var name = document.getElementById("name");
+    var form = document.getElementById("RegisterForm");
+    var nameInput = document.getElementById("name");
     var email = document.getElementById("email");
     var password = document.getElementById("password");
     var confirmPassword = document.getElementById("confirmPassword");
@@ -157,7 +156,8 @@
     var emailError = document.getElementById("emailError");
     var passwordError = document.getElementById("passwordError");
     var confirmError = document.getElementById("confirmError");
-    var successMsg = document.getElementById("successMsg");
+    var successMsg=document.getElementById("successMsg")
+
 
     // Run this when the form is submitted
     form.addEventListener("submit", function (e) {
@@ -166,7 +166,7 @@
         var isValid = true;
 
         // Check name is not empty
-        if (name.value.trim() === "") {
+        if (nameInput.value.trim() === "") {
             nameError.style.display = "block";
             isValid = false;
         } else {
@@ -199,11 +199,11 @@
 
         // If everything is correct, send data to backend
 if (isValid) {
-    fetch("http://localhost:5000/api/register", {
+    fetch("http://localhost:5000/api/Register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            name: name.value,
+            name: nameInput.value,
             email: email.value,
             password: password.value
         })
@@ -216,11 +216,11 @@ if (isValid) {
                 window.location.href = "login.html";
             }, 1000);
         } else {
-            alert(data.message); // e.g. "Ye email pehle se registered hai"
+            alert(data.message); 
         }
     })
     .catch(err => {
-        alert("Server se connect nahi ho saka. Check karo backend chal raha hai.");
+        alert("NOT Connect the server first check this backend is perform work or not.");
         console.log(err);
     });
 }
